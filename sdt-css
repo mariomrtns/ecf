@@ -1,0 +1,59 @@
+.sdt-tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.sdt-tab__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+.sdt-tab input:checked ~ .sdt-tab__content {
+  max-height: 10rem;
+}
+
+/* Visual styles */
+.sdt-accordion {
+  color: #1e1e18;
+  border: 2px solid #445638;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.sdt-tab__label {
+  display: flex;
+  color: #f6f6e9;
+  background: #6e8c5a;
+  cursor: pointer;
+}
+.sdt-tab__label {
+  justify-content: space-between;
+  padding: 1rem;
+}
+.sdt-tab__label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: all 0.35s;
+}
+.sdt-tab input:checked + .sdt-tab__label::after {
+  transform: rotate(270deg) translate(0, -8px);
+}
+.sdt-tab__content p {
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Arrow animation */
+.sdt-tab input:not(:checked) + .sdt-tab__label:hover::after {
+  animation: bounce .5s infinite;
+}
+@keyframes bounce {
+  25% {
+    transform: rotate(90deg) translate(.25rem);
+  }
+  75% {
+    transform: rotate(90deg) translate(-.25rem);
+  }
+}
