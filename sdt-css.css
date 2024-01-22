@@ -9,7 +9,7 @@
   transition: all 0.35s;
 }
 .sdt-tab input:checked ~ .sdt-tab__content {
-  max-height: 10rem;
+  max-height: 20rem;
 }
 
 /* Visual styles */
@@ -24,10 +24,13 @@
   color: #f6f6e9;
   background: #6e8c5a;
   cursor: pointer;
+  font-weight: 700;
+  font-size: calc(.9375rem + .2vmin);
 }
 .sdt-tab__label {
   justify-content: space-between;
   padding: 1rem;
+  margin: 0;
 }
 .sdt-tab__label::after {
   content: "\276F";
@@ -38,11 +41,14 @@
   transition: all 0.35s;
 }
 .sdt-tab input:checked + .sdt-tab__label::after {
-  transform: rotate(270deg) translate(0, -8px);
+  transform: rotate(270deg) translate(0, -.4rem);
 }
 .sdt-tab__content p {
   margin: 0;
   padding: 1rem;
+  background-color: #f6f6e9;
+  font-size: calc(.9375rem + .2vmin);
+
 }
 
 /* Arrow animation */
